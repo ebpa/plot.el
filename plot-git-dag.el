@@ -1092,7 +1092,7 @@ graph lines."
      nil)
     (_
      ;; FIXME?
-     (assert 0)
+     (assert nil)
      nil)))
 
 ;; (plot-dag-graph-padding-line :: Mixed -> Buffer -> Void)
