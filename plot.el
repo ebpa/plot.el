@@ -1,6 +1,7 @@
 ;;; plot.el --- Chart library                        -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017  Erik Anderson
+;; Copyright (C) 2020 Erik Anderson <erik@ebpa.link>
+;; Copyright (C) 2016 Sam Brightman
 
 ;; Author: Erik Anderson <erik@ebpa.link>
 ;; Homepage: https://github.com/ebpa/plot.el
