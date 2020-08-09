@@ -1,0 +1,34 @@
+* plot.el - A chart library
+:PROPERTIES:
+:pin:  t
+:END:
+** Introduction
+:PROPERTIES:
+:pin:  0
+:ID:       984fb898-5227-4695-a5d3-c0f37c26f944
+:END:
+
+*Git Graph (DAG)*
+
+This is an incomplete transcoding of the /git graph.c/ algorithm to elisp.
+
+
+** Similar projects
+:PROPERTIES:
+:pin:  -1
+:ID:       33026029-863f-4cdf-880a-80ce31bbe1ea
+:END:
+
+ - [[https://github.com/Evizero/UnicodePlots.jl][GitHub - Evizero/UnicodePlots.jl: Unicode-based scientific plotting for working in the terminal]]
+ - [[https://github.com/sunetos/TextPlots.jl][GitHub - sunetos/TextPlots.jl: Fancy terminal plotting for Julia using Braill...]]
+ - Sparklines
+   - [[https://github.com/woudshoo/sparkline][woudshoo/sparkline]] - Make sparkline graphs in emacs
+   - [[https://github.com/alvinfrancis/spark][alvinfrancis/spark]] - Port of cl-spark to emacs lisp              :EXCITING:
+ - [[http://karl-voit.at/2017/03/27/org-du/][org-du: Visualizing Org-mode Heading Sizes]]
+ - [[http://www.gnuvola.org/software/aa2u/][ascii-art-to-unicode.el]]
+ - [[https://github.com/tbanel/orgtblasciiplot][GitHub - tbanel/orgtblasciiplot: Draws bar plots in Emacs OrgMode tables]]
+ - [[https://gitlab.com/RobertCochran/neato-graph-bar][neato-graph-bar]] - htop-like CPU and memory graphs for Emacs
+ - [[https://www.emacswiki.org/emacs/Chart][EmacsWiki: Chart]]
+ - [[http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy][graph-easy - search.cpan.org]]
+ - gnuplot "dumb" output
+ - [[https://github.com/sambrightman/asciidag][GitHub - sambrightman/asciidag: Draw DAGs (directed acyclic graphs) as ASCII art, à la Git]]
