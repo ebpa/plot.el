@@ -10,7 +10,7 @@
 
 *Git Graph (DAG)*
 
-This is an incomplete transcoding of the /git graph.c/ algorithm to elisp.
+This is an incomplete transcoding of the /git graph.c/ algorithm to elisp.  Credit for the API and input graph logic goes to [[https://github.com/sambrightman][sambrightman's]] [[https://github.com/sambrightman/asciidag][asciidag]] project (git graph.c transcoded for Python).
 
 
 ** Similar projects

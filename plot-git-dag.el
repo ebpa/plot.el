@@ -1,9 +1,34 @@
 ;;; plot-dag.el --- The git graph algorithm (transcoded into elisp)           -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2020 Erik Anderson <erik@ebpa.link>
+;; Copyright (C) 2016 Sam Brightman
 
-;; Forked from https://github.com/git/git/commit/0ffa31fc36ff27edaccbb565323b95dfab2202f5
-;; ~/git/git/graph.c
-;; ~/git/git/graph.h
+;; Author: Erik Anderson <erik@ebpa.link>
+;; Keywords: tools
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;;; Forked from https://github.com/git/git/commit/0ffa31fc36ff27edaccbb565323b95dfab2202f5
+;;; ~/git/git/graph.c
+;;; ~/git/git/graph.h
+
+;;; Contains additional (translated) code from https://github.com/sambrightman/asciidag/tree/bfc161e7d791c73d7af669ca5d13dcd5156b5487
+
+;;; Code:
+
 
 
 (cl-defun plot-dag-node-from-list ((item . rest))
@@ -1321,16 +1346,19 @@ called even with a NULL graph."
 
 
 (defun plot-dag-show-nodes (graph nodes)
-  "Show an ASCII DAG for the nodes provided.
+  "Taken from https://github.com/sambrightman/asciidag.
+
+\"Show an ASCII DAG for the nodes provided.
 
 Nodes are walked and returned without duplicates and then sorted
 topologically (a requirement of the algorithm). The original Git
 API is then used internally to display the graph line-by-line,
 outputting the Node's content at the relevant point.
 
-Args: tips (:obj:`list` of :obj:`Node`): tips of trees to display"
+Args: tips (:obj:`list` of :obj:`Node`): tips of trees to display\""
   (message "(plot-dag-show-nodes %s %s)" graph nodes)
-  (declare (wip TODO "test"))
+  (declare (wip TODO "test"
+                TODO "rewrite docstring"))
   (with-temp-buffer
     (let* ((iter-nodes (plot-dag-sort-in-topological-order (cl-loop for n iter-by (plot-dag--once (plot-dag--walk-nodes nodes))
                                                                 collect n)))
@@ -1348,7 +1376,7 @@ Args: tips (:obj:`list` of :obj:`Node`): tips of trees to display"
     (buffer-substring (point-min) (point-max))))
 
 (iter-defun plot-dag--walk-nodes (nodes)
-  ""
+  "Taken from https://github.com/sambrightman/asciidag."
   (cl-loop for node in nodes
            do
            (iter-yield node))
@@ -1359,7 +1387,7 @@ Args: tips (:obj:`list` of :obj:`Node`): tips of trees to display"
                     (iter-yield ancestor))))
 
 (iter-defun plot-dag--once (iter-nodes)
-  ""
+  "Based on https://github.com/sambrightman/asciidag."
   (let* ((seen (make-hash-table)))
     (cl-loop for node iter-by iter-nodes
              if (not (gethash node seen))
@@ -1368,7 +1396,7 @@ Args: tips (:obj:`list` of :obj:`Node`): tips of trees to display"
              (iter-yield node))))
 
 (iter-defun plot-dag-sort-in-topological-order (nodes)
-  ""
+  "Taken from https://github.com/sambrightman/asciidag."
   (let* ((in-degree (make-hash-table)))
 
     (cl-loop for node in nodes
