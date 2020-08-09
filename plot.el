@@ -4,8 +4,8 @@
 
 ;; Author: Erik Anderson <erik@ebpa.link>
 ;; Homepage: https://github.com/ebpa/plot.el
-;; Package-Requires: ((emacs "25"))
 ;; Keywords: tools, multimedia
+;; Package-Requires: ((emacs "26"))
 ;; Version: 0.0.1
 
 ;; This program is free software; you can redistribute it and/or modify
